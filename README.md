@@ -7,6 +7,8 @@
 
 # 최소공배수
 - 재귀 방식
+
+'''c++
 int GCD(int n1, int n2) {
 	if (n2 == 0) {
 		return n1;
@@ -15,8 +17,11 @@ int GCD(int n1, int n2) {
 		return GCD(n2, n1 % n2);
 	}
 }
+'''
 
 - 반복 방식
+
+'''c++
 int GCD(int a, int b) {
 	int c = a % b;
 	while (c != 0) {
@@ -26,3 +31,4 @@ int GCD(int a, int b) {
 	}
 	return b;
 }
+'''
