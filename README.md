@@ -5,6 +5,7 @@
 - 공부과정에서 실수한 부분 작성함
 - 공부과정에서 놓친 부분 작성함
 - https://www.acmicpc.net/source/[제출번호]
+- https://www.acmicpc.net/problem/[문제번호]
 
 # 기본 틀
 ```cpp
