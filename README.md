@@ -33,7 +33,7 @@ int GCD(int a, int b) {
 }
 ```
 
--에라토스테네스의 체
+- 에라토스테네스의 체
 ```cpp
 #include <iostream>
 #include <cmath>
