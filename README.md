@@ -6,6 +6,22 @@
 - 공부과정에서 놓친 부분 작성함
 - https://www.acmicpc.net/source/[제출번호]
 
+# 기본 틀
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+void Solution(void) {
+	
+}
+
+int main(void) {
+	ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);
+	Solution();
+	return 0;
+}
+```
+
 # 최소공배수
 - 재귀 방식
 
