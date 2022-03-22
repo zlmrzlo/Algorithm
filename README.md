@@ -1,5 +1,6 @@
 # Algorithm
 알고리즘 공부 흔적
+- https://solved.ac/profile/zlmrzlo
 - 새롭게 알게 된 지식을 추가함
 - 반복되어 사용되는 부분을 따로 작성함
 - 공부과정에서 실수한 부분 작성함
