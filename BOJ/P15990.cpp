@@ -32,3 +32,5 @@ int main(void) {
 	Solution();
 	return 0;
 }
+
+// Âü°í: https://jdselectron.tistory.com/71
