@@ -16,13 +16,13 @@ void Solution(void) {
 
 	int n2 = 0;
 	for (int i = 1; i <= n1; i++) {
-		a2[i] = a1[i];
-		for (int j = 1; j < i; j++) {
-			if (a1[i] > a1[j] && a2[i] < a2[j] + a1[i]) {
-				a2[i] = a2[j] + a1[i];
+		a2[i] = 1;
+		for (int j = i - 1; j >= 1; j--) {
+			if (a1[i] < a1[j]) {
+				a2[i] = max(a2[i], a2[j] + 1);
 			}
 		}
-		n2 = max(n2, a2[i]);
+		n2 = max(a2[i], n2);
 	}
 
 	cout << n2 << endl;
@@ -33,5 +33,3 @@ int main(void) {
 	Solution();
 	return 0;
 }
-
-// Âü°í: https://yabmoons.tistory.com/87
