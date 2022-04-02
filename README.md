@@ -58,6 +58,14 @@ int GCD(int a, int b) {
 }
 ```
 
+# 최소공배수
+```c++
+int lcm(int a, b)
+{
+    return a * b / gcd(a, b);
+}
+```
+
 # 에라토스테네스의 체
 ```cpp
 #include <iostream>
