@@ -1,33 +1,36 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
-#define MAX 8
 
-int N, M;
-vector<int> number(MAX);
-vector<bool> visited(MAX);
+#define endl '\n'
 
-void BackTracking(int count, int next) {
-	if (count == M) {
-		for (int i = 0; i < M; i++) {
-			cout << number[i] << ' ';
+int n1, n2;
+int a1[9];
+void Input() {
+	cin >> n1 >> n2;
+}
+
+void DFS(int count, int next) {
+	if (count == n2) {
+		for (int i = 0; i < n2; i++) {
+			cout << a1[i] << ' ';
 		}
-		cout << '\n';
+		cout << endl;
 		return;
 	}
-	for (int i = next; i <= N; i++) {
-		number[count] = i;
-		BackTracking(count + 1, i);
+
+	for (int i = next; i <= n1; i++) {
+		a1[count] = i;
+		DFS(count + 1, i);
 	}
 }
 
-int main() {
-	ios_base::sync_with_stdio(false), cout.tie(NULL), cin.tie(NULL);
-	cin >> N >> M;
-
-	BackTracking(0, 1);
-
-	return 0;
+void Solution(void) {
+	DFS(0, 1);
 }
 
-// Âü°í : https://hongchan.tistory.com/5
+int main(void) {
+	ios_base::sync_with_stdio(false), cin.tie(NULL), cout.tie(NULL);
+	Input();
+	Solution();
+	return 0;
+}

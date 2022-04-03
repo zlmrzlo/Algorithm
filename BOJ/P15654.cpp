@@ -4,27 +4,37 @@ using namespace std;
 #define endl '\n'
 
 int n1, n2;
-int a1[9];
-bool a2[9];
+vector<int> v1;
+vector<bool> v2;
+vector<int> v3;
 void Input() {
 	cin >> n1 >> n2;
+	v1.resize(n1);
+	v2.resize(n1);
+	v3.resize(n1);
+	for (int i = 0; i < n1; i++) {
+		int n3;
+		cin >> n3;
+		v1[i] = n3;
+	}
+	sort(v1.begin(), v1.end());
 }
 
 void DFS(int count) {
 	if (count == n2) {
 		for (int i = 0; i < n2; i++) {
-			cout << a1[i] << ' ';
+			cout << v3[i] << ' ';
 		}
 		cout << endl;
 		return;
 	}
 
 	for (int i = 0; i < n1; i++) {
-		if (!a2[i]) {
-			a2[i] = true;
-			a1[count] = i + 1;
+		if (!v2[i]) {
+			v2[i] = true;
+			v3[count] = v1[i];
 			DFS(count + 1);
-			a2[i] = false;
+			v2[i] = false;
 		}
 	}
 }
