@@ -104,3 +104,6 @@ int main()
     primeNumberSieve();
 }
 ```
+
+# 비트마스크 정리
+https://rebro.kr/63
