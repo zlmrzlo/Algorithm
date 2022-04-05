@@ -17,8 +17,8 @@ void Input() {
 	}
 }
 
-void DFS(int count, int next) {
-	if (count == n1 / 2) {
+void DFS(int count, int next, int target) {
+	if (count == target) {
 		int start = 0;
 		int link = 0;
 		int diff;
@@ -40,13 +40,15 @@ void DFS(int count, int next) {
 
 	for (int i = next; i <= n1; i++) {
 		a2[i] = true;
-		DFS(count + 1, i + 1);
+		DFS(count + 1, i + 1, target);
 		a2[i] = false;
 	}
 }
 
 void Solution(void) {
-	DFS(0, 1);
+	for (int i = 2; i <= n1 - 2; i++) {
+		DFS(0, 1, i);
+	}
 	cout << n2 << endl;
 }
 
