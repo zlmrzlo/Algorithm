@@ -20,48 +20,36 @@ void Input() {
 	}
 }
 
-void BFS(int x, int y) {
-	queue<pair<int, int>> q1;
-	q1.push(make_pair(x, y)); 
-	a2[x][y] = 1;
+bool b1;
+void DFS(int count, int x, int y, int sx, int sy) {
+	a2[x][y] = true;
+	for (int i = 0; i < 4; i++) {
+		int nx = x + dx[i];
+		int ny = y + dy[i];
 
-	while (!q1.empty()) {
-		pair<int, int> p1 = q1.front();
-		q1.pop();
-
-		for (int i = 0; i < 4; i++) {
-			int nx = p1.first + dx[i];
-			int ny = p1.first + dy[i];
-
-			if (nx < 0 || nx >= n1 || ny < 0 || ny >= n2) {
-				continue;
-			}
-
-			if (a2[nx][ny] == 0 && a1[x][y] == a1[p1.first][p1.second]) {
-				a2[nx][ny] = a2[p1.first][p1.second] + 1;
-				q1.push({ nx,ny });
-			}
+		if (nx < 0 || ny < 0 || nx >= n1 || ny >= n2) {
+			continue;
 		}
+
+		if (a1[x][y] == a1[nx][ny] && !a2[nx][ny]) {
+			DFS(count + 1, nx, ny, sx, sy);
+		}
+		else if (sx == nx && sy == ny && count >= 4) {
+			b1 = true;
+			return;
+		}
+
 	}
+	a2[x][y] = false;
 }
 
-bool b1;
 void Solution(void) {
 	for (int i = 0; i < n1; i++) {
 		for (int j = 0; j < n2; j++) {
-			if (!a2[i][j]) {
-				BFS(i, j);
-			}
-			for (int k = 0; k < n1; k++) {
-				for (int l = 0; l < n2; l++) {
-					cout << a2[k][l] << ' ';
-				}
-				cout << endl;
-			}
-			cout << endl;
-			memset(a2, false, sizeof(a2));
+			DFS(1, i, j, i, j);
 		}
 	}
+
 	b1 ? cout << "Yes" << endl : cout << "No" << endl;
 }
 
