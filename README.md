@@ -14,6 +14,7 @@
 using namespace std;
 
 #define endl '\n'
+
 void Input() {
 
 }
